@@ -1,0 +1,15 @@
+﻿@model PhotoGalleryAdminPanel.Models.PushNotificationViewModel
+@{
+    ViewData["Title"] = "CreatePushNotification";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+    @using(Html.BeginForm("CreatePushNotification", "Home", FormMethod.Post))
+    {
+        @Html.EditorForModel();
+        <br>
+        <input type="submit" class="btn-group-lg" value="Send notification">
+    }
+</div>
+
