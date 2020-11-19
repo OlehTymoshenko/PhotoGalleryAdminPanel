@@ -1,20 +1,21 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
 WORKDIR /app
+EXPOSE 80
+EXPOSE 443
 
-# Copy csproj and restore as distinct layers
-COPY *.csproj ./
-RUN dotnet restore
-
-# Copy everything else and build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+WORKDIR /src
+COPY ["PhotoGalleryAdminPanel.csproj", "PhotoGalleryAdminPanel.csproj"]
+RUN dotnet restore "PhotoGalleryAdminPanel.csproj"
 COPY . .
-RUN dotnet publish -c Release -o out
+WORKDIR "/src"
+RUN dotnet build "PhotoGalleryAdminPanel.csproj" -c Release -o /app/build
 
-# Build runtime image
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster
+FROM build AS publish
+RUN dotnet publish "PhotoGalleryAdminPanel.csproj" -c Release -o /app/publish
+
+FROM base AS final
 WORKDIR /app
-COPY --from=build-env /app/out .
-
-# Run the app on container startup
-# Use your project name for the second parameter
-# e.g. MyProject.dll
-ENTRYPOINT [ "dotnet", "PhotoGalleryAdminPanel.dll" ]
+COPY --from=publish /app/publish .
+#ENTRYPOINT ["dotnet", "PhotoGalleryAdminPanel.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet PhotoGalleryAdminPanel.dll

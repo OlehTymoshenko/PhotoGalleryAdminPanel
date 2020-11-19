@@ -3,13 +3,13 @@
     ViewData["Title"] = "CreatePushNotification";
 }
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-
+    <h1 class="display-4"> Create a new push notification </h1>
+    <br>
     @using(Html.BeginForm("CreatePushNotification", "Home", FormMethod.Post))
     {
         @Html.EditorForModel();
         <br>
-        <input type="submit" class="btn-group-lg" value="Send notification">
+        <input type="submit" class="btn-secondary" value="Send notification">
     }
 </div>
 
