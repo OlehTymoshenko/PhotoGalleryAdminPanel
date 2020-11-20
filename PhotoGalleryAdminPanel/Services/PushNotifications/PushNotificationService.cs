@@ -24,9 +24,13 @@ namespace PhotoGalleryAdminPanel.Services.PushNotifications
 				Notification = new Notification()
 				{
 					Title = notification.Title ?? "Photo gallery notification",
-					Body = notification.Body ?? "",
+					Body = notification.Body ?? "Sorry, notification losted",
 					ImageUrl = notification.ImageUrl ?? DEFAULT_NOTIFICATION_IMAGE_URL
-				}
+				},
+				Android = new AndroidConfig()
+                {
+					Priority = Priority.High
+                }
 			};
 
 			return await messagingFB.SendAsync(msg);
