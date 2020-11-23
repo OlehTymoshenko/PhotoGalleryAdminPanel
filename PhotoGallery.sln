@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoGalleryAdminPanel", "PhotoGalleryAdminPanel\PhotoGalleryAdminPanel.csproj", "{7F62A649-CB86-40AF-8CE8-29B531570191}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoGalleryAdminPanel", "PhotoGalleryAdminPanel\PhotoGalleryAdminPanel.csproj", "{7F62A649-CB86-40AF-8CE8-29B531570191}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoGalleryWebAPI", "PhotoGalleryWebAPI\PhotoGalleryWebAPI.csproj", "{6E0A9D82-1F6D-453E-94CC-B0C4C040BA57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7F62A649-CB86-40AF-8CE8-29B531570191}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F62A649-CB86-40AF-8CE8-29B531570191}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F62A649-CB86-40AF-8CE8-29B531570191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E0A9D82-1F6D-453E-94CC-B0C4C040BA57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E0A9D82-1F6D-453E-94CC-B0C4C040BA57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E0A9D82-1F6D-453E-94CC-B0C4C040BA57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E0A9D82-1F6D-453E-94CC-B0C4C040BA57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
