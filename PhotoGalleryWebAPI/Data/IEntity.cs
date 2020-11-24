@@ -7,6 +7,6 @@ namespace PhotoGalleryWebAPI.Data
 {
     public interface IEntity
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
     }
 }

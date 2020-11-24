@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PhotoGalleryWebAPI.Models
 {
-    public class ReservationView
+    public class ReservationDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }

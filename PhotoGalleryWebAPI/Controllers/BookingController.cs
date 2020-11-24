@@ -26,18 +26,25 @@ namespace PhotoGalleryWebAPI.Controllers
             var res = from item in reservations
                       select new
                       {
-                          item.Id,
-                          item.Name,
-                          ReservationDateTime = item.ReservationDateTime.ToUniversalTime().ToString("o"),
-                          Duration = item.Duration.ToString()
+                          id = item.Id,
+                          name = item.Name,
+                          reservationDateTime = item.ReservationDateTime.ToUniversalTime().ToString("o"),
+                          duration = item.Duration.ToString()
                       };
 
             return new JsonResult(res);
         }
 
         [HttpPost]
-        public async Task<ActionResult<Reservation>> Post(Reservation reservation)
+        public async Task<ActionResult<Reservation>> Post(ReservationDTO reservationDTO)
         {
+            Reservation reservation = new Reservation()
+            {
+                Id = reservationDTO.Id,
+                Name = reservationDTO.Name,
+                ReservationDateTime = DateTime.Parse(reservationDTO.ReservationDateTime).ToUniversalTime(),
+                Duration = TimeSpan.Parse(reservationDTO.Duration)
+            };
             return await bookingService.Add(reservation);
         }
     }

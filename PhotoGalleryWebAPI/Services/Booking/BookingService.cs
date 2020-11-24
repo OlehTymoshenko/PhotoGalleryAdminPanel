@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using PhotoGalleryWebAPI.Data;
@@ -16,7 +17,6 @@ namespace PhotoGalleryWebAPI.Services
         {
             this.repository = repository;
         }
-
 
         public async Task<IEnumerable<Reservation>> GetAll()
         {

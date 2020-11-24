@@ -82,7 +82,7 @@ namespace PhotoGalleryWebAPI.Data.JSONFile
         private void SeedData()
         {
             if (jsonStorage.Count > 0) return;
-            jsonStorage.Add(JToken.FromObject(new Reservation() { Id = id++, Duration = new TimeSpan(1, 45, 0), Name = "Oleh", ReservationDateTime = DateTime.UtcNow.AddHours(1) }));
+            jsonStorage.Add(JToken.FromObject(new Reservation() { Id = id++, Duration = new TimeSpan(1, 45, 0), Name = "Oleh", ReservationDateTime = DateTime.UtcNow.AddHours(1).ToUniversalTime() }));
             this.SaveChanges();
         }
 

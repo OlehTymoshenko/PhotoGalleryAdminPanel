@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +33,7 @@ namespace PhotoGalleryWebAPI
             services.AddControllers();
             services.AddScoped<IRepository<Reservation>, JsonFileBookingRepository>();
             services.AddScoped<IBookingService, BookingService>();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,7 +48,10 @@ namespace PhotoGalleryWebAPI
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            // cors
+            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
