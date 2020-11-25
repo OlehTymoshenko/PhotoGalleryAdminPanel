@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using PhotoGalleryWebAPI.Models;
 using PhotoGalleryWebAPI.Services;
 
@@ -12,16 +13,20 @@ namespace PhotoGalleryWebAPI.Controllers
     [Route("api/[controller]")]
     public class BookingController : ControllerBase
     {
-        private IBookingService bookingService;
-        public BookingController(IBookingService bookingService)
+        private readonly IBookingService bookingService;
+        private readonly ILogger logger;
+
+        public BookingController(IBookingService bookingService, ILogger<BookingController> logger)
         {
             this.bookingService = bookingService;
+            this.logger = logger;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Reservation>>> Get()
         {
             var reservations =  await bookingService.GetAll();
+            logger.Log(LogLevel.Critical, "Test critical log {id}", 10);
 
             var res = from item in reservations
                       select new
@@ -31,7 +36,6 @@ namespace PhotoGalleryWebAPI.Controllers
                           reservationDateTime = item.ReservationDateTime.ToUniversalTime().ToString("o"),
                           duration = item.Duration.ToString()
                       };
-
             return new JsonResult(res);
         }
 

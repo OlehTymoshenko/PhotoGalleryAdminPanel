@@ -15,13 +15,7 @@ namespace PhotoGalleryWebAPI.Data.JSONFile
     {
         private readonly string JSON_FILE_NAME;
 
-        private static int id;
-
-        static JSONFileRepository()
-        {
-            id = 0;
-        }
-
+        private int id;
 
         private JArray jsonStorage;
 
@@ -39,6 +33,7 @@ namespace PhotoGalleryWebAPI.Data.JSONFile
 
         public Task<TEntity> AddAsync(TEntity entity)
         {
+            entity.Id = ++this.id;
             this.jsonStorage.Add(JToken.FromObject(entity));
             SaveChanges();
             return Task.FromResult(entity);
@@ -76,6 +71,10 @@ namespace PhotoGalleryWebAPI.Data.JSONFile
             {
                 jsonStorage = new JArray();
                 System.Diagnostics.Debug.Print(ex.Message);
+            }
+            finally
+            {
+                id = jsonStorage.ToObject<IEnumerable<TEntity>>().Max(entity => entity.Id).GetValueOrDefault();
             }
         }
 
