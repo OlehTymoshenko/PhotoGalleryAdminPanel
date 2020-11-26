@@ -8,7 +8,6 @@ C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\bin\Debug\netcoreapp3
 C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\bin\Debug\netcoreapp3.1\PhotoGalleryWebAPI.dll
 C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\bin\Debug\netcoreapp3.1\PhotoGalleryWebAPI.pdb
 C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\obj\Debug\netcoreapp3.1\PhotoGalleryWebAPI.csprojAssemblyReference.cache
 C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\obj\Debug\netcoreapp3.1\PhotoGalleryWebAPI.AssemblyInfoInputs.cache
 C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\obj\Debug\netcoreapp3.1\PhotoGalleryWebAPI.AssemblyInfo.cs
 C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\obj\Debug\netcoreapp3.1\PhotoGalleryWebAPI.csproj.CoreCompileInputs.cache
@@ -21,3 +20,4 @@ C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\obj\Debug\netcoreapp3
 C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\obj\Debug\netcoreapp3.1\PhotoGalleryWebAPI.dll
 C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\obj\Debug\netcoreapp3.1\PhotoGalleryWebAPI.pdb
 C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\obj\Debug\netcoreapp3.1\PhotoGalleryWebAPI.genruntimeconfig.cache
+C:\Users\user\source\repos\PhotoGallery\PhotoGalleryWebAPI\obj\Debug\netcoreapp3.1\PhotoGalleryWebAPI.csprojAssemblyReference.cache

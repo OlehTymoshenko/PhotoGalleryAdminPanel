@@ -7,8 +7,8 @@ namespace PhotoGalleryWebAPI.Data
 {
     public interface IRepository<T> where T : class, IEntity
     {
-        Task<IEnumerable<T>> GetAllAsync();
-        Task<T> AddAsync(T entity);
+        IEnumerable<T> GetAll();
+        T Add(T entity);
 
         void SaveChanges();
     }

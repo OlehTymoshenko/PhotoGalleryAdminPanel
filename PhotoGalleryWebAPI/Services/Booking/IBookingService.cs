@@ -8,8 +8,8 @@ namespace PhotoGalleryWebAPI.Services
 {
     public interface IBookingService
     {
-        public Task<IEnumerable<Reservation>> GetAll();
+        public IEnumerable<Reservation> GetAll();
 
-        public Task<Reservation> Add(Reservation reservation);
+        public Reservation Add(Reservation reservation);
     }
 }

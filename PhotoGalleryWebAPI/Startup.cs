@@ -37,7 +37,7 @@ namespace PhotoGalleryWebAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -51,8 +51,9 @@ namespace PhotoGalleryWebAPI
             // cors
             app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
-            //app.UseAuthorization();
+            
 
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
